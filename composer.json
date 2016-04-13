@@ -1,0 +1,24 @@
+{
+    "name": "madmanlear/Midaas",
+    "description": "A PHP wrapper for MIDAAS API",
+    "license": "MIT",
+    "keywords": ["midaas", "hackthepaygap"],
+    "authors": [
+        {
+            "name": "Chris Davis",
+            "email": "madmanlear@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.9",
+        "guzzlehttp/guzzle": "~6.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "MadManLear\\Midaas\\": "src"
+        }
+    }
+}
