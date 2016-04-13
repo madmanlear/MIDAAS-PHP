@@ -15,13 +15,13 @@ $fields = [
 ];
 
 //Return an Object
-$distrubition-results = $midaas->incomeDistribution($fields);
+$distrubition_results = $midaas->incomeDistribution($fields);
 
 //Return JSON
-$quantile-results = $midaas->incomeQuantile($fields, true);
+$quantile_results = $midaas->incomeQuantile($fields, true);
 
-print_r($distrubition-results);
-print_r($quantile-results);
+print_r($distrubition_results);
+print_r($quantile_results);
 ```
 
 **Composer package forthcoming.**
