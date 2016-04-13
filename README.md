@@ -5,7 +5,6 @@
 A PHP wrapper for the MIDAAS API
 
 ```php
-
 require_once 'vendor/autoload.php';
 
 $midaas = new Madmanlear\Midaas;
@@ -18,7 +17,6 @@ $fields = [
 $results = $midaas->incomeDistribution($fields, true);
 
 print_r($results);
-
 ```
 
 **Composer package forthcoming.**
