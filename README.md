@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/madmanlear/MIDAAS-PHP.svg?branch=master)](https://travis-ci.org/madmanlear/MIDAAS-PHP)
 
-A PHP wrapper for the MIDAAS API. Validates that all query fields are valid 
+A PHP wrapper for the MIDAAS API. Validates all query fields before making a request and will return either a PHP Object or a JSON string.
 
 ```php
 require_once 'vendor/autoload.php';
