@@ -4,6 +4,12 @@
 
 A PHP wrapper for the MIDAAS API. Validates all query fields before making a request and will return either a PHP Object or a JSON string.
 
+## Installation
+
+`composer require madmanlear/midaas`
+
+## Example Use
+
 ```php
 require_once 'vendor/autoload.php';
 
