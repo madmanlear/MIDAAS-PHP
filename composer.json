@@ -1,12 +1,14 @@
 {
     "name": "madmanlear/midaas",
-    "description": "A PHP wrapper for MIDAAS API",
+    "description": "A PHP wrapper for the MIDAAS API",
     "license": "MIT",
-    "keywords": ["midaas", "hackthepaygap"],
+    "keywords": ["midaas", "api"],
+    "homepage": "https://github.com/madmanlear/MIDAAS-PHP",
     "authors": [
         {
             "name": "Chris Davis",
-            "email": "madmanlear@gmail.com"
+            "email": "madmanlear@gmail.com",
+            "role": "Developer"
         }
     ],
     "require": {
