@@ -2,10 +2,12 @@
 
 namespace Madmanlear;
 
+use \GuzzleHttp\Client;
+
 class Midaas
 {
 
-    private $base_url = 'https://brbimhg0w9.execute-api.us-west-2.amazonaws.com/dev/';
+    private $base_url = 'https://brbimhg0w9.execute-api.us-west-2.amazonaws.com/dev/income/';
 
     private $valid_fields = [
         'agegroup',
@@ -15,9 +17,54 @@ class Midaas
         'state',
     ];
 
+    private $valid_endpoints = [
+        'distribution',
+        'quantile',
+    ];
+
     public function getBaseUrl()
     {
         return $this->base_url;
+    }
+
+    public function incomeQuantile($options, $json = false)
+    {
+        return $this->request('quantile', $options, $json);
+    }
+
+    public function incomeDistribution($options, $json = false)
+    {
+        return $this->request('distribution', $options, $json);
+    }
+
+    public function request($endpoint, $options = array(), $json = false)
+    {
+        if (!in_array($endpoint, $this->valid_endpoints)) {
+            throw new \UnexpectedValueException("This endpoint does not exist");
+        }
+
+        if(!$this->validateFields($options)) {
+            throw new \InvalidArgumentException("Error Processing Request");
+        }
+
+        $client = new Client();
+
+        //Letting Guzzle throw its own exceptions
+        //so this function can be wrapped in a try/catch
+        //and the only returned response will be a successful one
+        $request = $client->request('GET', $this->getBaseUrl() . $endpoint, [
+            'http_errors' => true,
+            'query' => $options
+        ]);
+
+        $body = $request->getBody();
+        $contents = $body->getContents();
+
+        if ($json === true) {
+            return $contents;
+        }
+
+        return json_decode($contents);
     }
 
     public function getAgegroupList()
@@ -116,6 +163,17 @@ class Midaas
             "WI",
             "WY"
         ];
+    }
+
+    public function validateFields($fields)
+    {
+        foreach ($fields as $field_name => $field_value) {
+            if (!$this->validateField($field_name, $field_value)) {
+                return false;
+            }
+        }
+
+        return true;
     }
 
     public function validateField($field_name, $field_value = '')

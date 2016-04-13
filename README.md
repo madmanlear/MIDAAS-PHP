@@ -1,4 +1,7 @@
 # MIDAAS-PHP
+
+[![Build Status](https://travis-ci.org/madmanlear/MIDAAS-PHP.svg?branch=master)](https://travis-ci.org/madmanlear/MIDAAS-PHP)
+
 A PHP wrapper for the MIDAAS API
 
 **In progress.**

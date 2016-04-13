@@ -93,4 +93,31 @@ class MidaasTest extends PHPUnit_Framework_TestCase
         $this->assertEquals(false, $this->midaas->validateFieldValue('state', 'Georgia'));
     }
 
+    /**
+     * Test requests section
+     */
+    public function test_summary_endpoint_throws_exception()
+    {
+        $this->setExpectedException(\UnexpectedValueException::class);
+        $this->midaas->request('summary');
+    }
+
+    public function test_page_field_throws_exception()
+    {
+        $this->setExpectedException(\InvalidArgumentException::class);
+        $this->midaas->request('distribution', ['page' => '1']);
+    }
+
+    public function test_valid_request_returns_object()
+    {
+        $result = $this->midaas->request('distribution');
+        $this->assertInternalType('object', $result);
+    }
+
+    public function test_valid_request_with_json_flag_returns_json_string()
+    {
+        $result = $this->midaas->request('distribution', array(), true);
+        $this->assertInternalType('string', $result);
+    }
+
 }
