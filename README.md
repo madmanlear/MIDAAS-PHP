@@ -30,8 +30,6 @@ print_r($distrubition_results);
 print_r($quantile_results);
 ```
 
-**Composer package forthcoming.**
-
 ## About MIDAAS
 
 MIDAAS is a commerce data service offering direct access to income census data across geographies and demographics. For more information visit [https://midaas.commerce.gov/](https://midaas.commerce.gov/)
