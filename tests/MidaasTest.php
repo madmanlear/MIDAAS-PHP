@@ -119,5 +119,4 @@ class MidaasTest extends PHPUnit_Framework_TestCase
         $result = $this->midaas->request('distribution', array(), true);
         $this->assertInternalType('string', $result);
     }
-
 }

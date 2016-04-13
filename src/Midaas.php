@@ -43,7 +43,7 @@ class Midaas
             throw new \UnexpectedValueException("This endpoint does not exist");
         }
 
-        if(!$this->validateFields($options)) {
+        if (!$this->validateFields($options)) {
             throw new \InvalidArgumentException("Error Processing Request");
         }
 
