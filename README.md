@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/madmanlear/MIDAAS-PHP.svg?branch=master)](https://travis-ci.org/madmanlear/MIDAAS-PHP)
 
-A PHP wrapper for the MIDAAS API
+A PHP wrapper for the MIDAAS API. Validates that all query fields are valid 
 
 ```php
 require_once 'vendor/autoload.php';
@@ -14,9 +14,14 @@ $fields = [
     'state' => 'GA',
 ];
 
-$results = $midaas->incomeDistribution($fields, true);
+//Return an Object
+$distrubition-results = $midaas->incomeDistribution($fields);
 
-print_r($results);
+//Return JSON
+$quantile-results = $midaas->incomeQuantile($fields, true);
+
+print_r($distrubition-results);
+print_r($quantile-results);
 ```
 
 **Composer package forthcoming.**
