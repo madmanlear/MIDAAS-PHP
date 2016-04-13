@@ -7,11 +7,18 @@ class MidaasTest extends PHPUnit_Framework_TestCase
 
     public $midaas;
 
+    /**
+     * Make the Midaas class available for ease of use
+     */
     public function __construct()
     {
         $this->midaas = new Midaas();
     }
     
+    /**
+     * Test things exist section
+     */
+
     public function test_class_exists()
     {
         $this->assertInstanceOf(Midaas::class, $this->midaas);
@@ -21,6 +28,10 @@ class MidaasTest extends PHPUnit_Framework_TestCase
     {
         $this->assertInternalType('string', $this->midaas->getBaseUrl());
     }
+
+    /**
+     * Test field validation section
+     */
 
     public function test_state_is_valid_field_name()
     {
