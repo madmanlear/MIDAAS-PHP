@@ -1,5 +1,5 @@
 {
-    "name": "madmanlear/Midaas",
+    "name": "madmanlear/midaas",
     "description": "A PHP wrapper for MIDAAS API",
     "license": "MIT",
     "keywords": ["midaas", "hackthepaygap"],
@@ -18,7 +18,7 @@
     },
     "autoload": {
         "psr-4": {
-            "MadManLear\\Midaas\\": "src"
+            "Madmanlear\\": "src/"
         }
     }
 }
